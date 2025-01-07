@@ -20,7 +20,7 @@ def main():
 
     try:
         results = model.predict(source=str(source_path), conf=0.25, save=True)
-                latest_predict_folder = sorted(Path("runs/detect").glob("predict*"), key=lambda x: x.stat().st_ctime, reverse=True)[0]
+        latest_predict_folder = sorted(Path("runs/detect").glob("predict*"), key=lambda x: x.stat().st_ctime, reverse=True)[0]
         
         for file in latest_predict_folder.iterdir():
             if file.is_file():
